@@ -5,9 +5,6 @@ h1,h2,h3,h4,h5,h6{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
-h1:hover, h4:hover, a:hover, .portfo-header-photo:hover  {
-    transform: scale(1.02, 1.02);
-}
 a, .button-file-upload{
     color: #DD3E18;
 }

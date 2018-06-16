@@ -1,0 +1,25 @@
+.test{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+} 
+
+
+
+$test-sm-color: yellow;
+
+.test { 
+  @include media-breakpoint-up(sm){
+ background: $test-sm-color;
+    }
+ @include media-breakpoint-up(md){
+   background: yellowgreen;
+    }
+  @include media-breakpoint-up(lg){
+    background: green;
+    }
+  @include media-breakpoint-up(xl){
+    background: blue;
+    }
+  
+}

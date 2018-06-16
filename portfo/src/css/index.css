@@ -1,0 +1,239 @@
+body{
+    font-family: Georgia, Times, Arial, sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+a, .button-file-upload{
+    color: #DD3E18;
+}
+h4{
+    font-size: 24px;
+}
+.portfo-main-page{
+    min-width: 336px;
+}
+header.portfo-header-container{
+    background-color: #082841;
+}
+.portfo-header{
+    color: white;
+    font-size: 20px;
+}
+.portfo-header-text-sm{
+    margin-top: 33px;
+}
+.portfo-header-photo{
+    background-image: url('../images/photo.jpg');
+    background-position: center center;
+    background-size: cover;
+    margin: 21px 0 30px 0;  
+}
+.portfo-header{
+    animation: fadein 3s; 
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.portfo-header-text-bottom{    
+    width: 305px;
+}
+.portfo-main-part-container{
+    padding-top:  106px;
+    padding-bottom: 146px;
+}
+.portfo-main-part-block{
+    width: 304px;
+}
+.portfo-expectations{
+    margin-bottom: 129px;
+}
+.portfo-expectations-block{
+    background-image: linear-gradient(-180deg, #E6F0F0 0%, #E9F0E6 100%);
+    border-radius: 4px;
+    height: 216px;
+    padding: 24px 32px 0px 32px;
+}
+.carousel-inner{
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.carousel-inner:hover{
+    transition-duration: 0.3s;
+    transform: translateY(-3px);
+    transform: scale(1.02, 1.02);
+}
+.portfo-expectations .carousel-inner{
+    box-shadow: none;
+}
+.carousel-indicators-container{
+    position: absolute;
+    top: 266px;
+}
+.carousel-indicators {
+    width: 304px;   
+}
+ol.carousel-indicators li{
+    border-radius: 4px;
+    width: 8px;
+    height: 8px;
+    background: #DD3E18;  
+    margin: 16px;
+}
+ol.carousel-indicators li:hover{
+    transform: scale(2, 2);
+}
+ol.carousel-indicators li.active{
+    background: black;
+}
+.portfo-footer-container{
+    background-image: linear-gradient(-180deg, #E6F0F0 0%, #E9F0E6 100%);
+}
+.portfo-footer{
+    width: 304px;
+    padding-top: 43px;
+    padding-bottom: 72px;
+}
+.portfo-footer h1{
+    margin-bottom: 61px;
+}
+.portfo-footer-text{
+    width: 100%;
+}
+.portfo-footer-link{
+    margin-bottom: 20px;
+}
+.portfo-footer-link img, .portfo-footer-form form div img{
+    margin-right: 12px;
+}
+.portfo-footer-link img{
+    width: 20px;
+}
+.portfo-footer-form form input{
+    height: 48px;
+}
+textarea.form-control{
+    height: 192px;
+}
+.portfo-footer-form form button {
+margin-top: 32px;
+background: #DD3E18;
+}
+@media (min-width: 336px) { 
+.portfo-header{width: 336px;
+height: 648px;}
+.portfo-header-photo{
+    width: 144px;
+    height: 144px;
+    border-radius: 100%;
+}
+   }
+@media (min-width: 768px) { 
+.portfo-header{width: 768px;
+height: 1024px;}
+.portfo-header-text-sm{
+    margin-top: 97px;
+}
+.portfo-header-photo{
+    width: 384px;
+    height: 384px;
+}
+.portfo-header-text-bottom{
+    margin-top: 75px;
+    width: 544px;
+}
+.portfo-main-part-block{
+    width: 704px;
+}
+.portfo-carousel-text p{
+    width: 384px;
+}
+.carousel-indicators-container{
+    top: 548px;
+}
+.carousel-indicators {
+    width: 704px;  
+}
+.portfo-footer{
+    width: 704px;
+    padding-top: 33px;
+    padding-bottom: 98px;
+}
+.portfo-footer-text p{
+    width: 384px;
+    margin-right: 96px;
+}
+ }
+@media (min-width: 1024px) { 
+.portfo-header{
+    width: 1024px;
+    height: 768px;
+}
+.portfo-header-photo{
+    height: 768px;
+    min-width: 424px;
+    border-radius: 0;
+}
+.portfo-header-text{
+    margin-top: 65px;
+    margin-left: 96px;
+}
+.portfo-header-text-bottom{
+    margin-top: 266px;
+    width: 464px;
+}
+.portfo-main-part-block{
+    width: 944px;
+}
+.carousel-indicators-container{
+    left: 544px;
+    top: 270px;
+}
+.carousel-indicators {
+    width: 40px; 
+    }
+.portfo-carousel-text{
+    margin-left: 96px;
+}
+.portfo-carousel-text p{
+    width: auto;
+}
+.carousel-inner{
+    width: 544px;
+}
+.portfo-footer{
+    width: 944px;
+    padding-top: 81px;
+    padding-bottom: 146px;
+}
+.portfo-footer-text{
+    width: 304px;
+}
+.portfo-footer-text p{
+    width: 100%
+}
+.portfo-footer-form{
+    width: 544px;
+}
+ }
+@media (min-width: 1440px) { 
+.portfo-header{
+    width: 1440px;
+    height: 672px;}
+.portfo-header-photo{
+    height: 672px;
+    min-width: 552px;
+}
+.portfo-header-text-bottom{
+    margin-top: 234px;
+    width: 544px;
+}
+ }
+
+

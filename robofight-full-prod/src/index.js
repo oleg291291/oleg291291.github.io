@@ -20,11 +20,11 @@ import { scoreCounter } from './scripts/score';
 var isProd = typeof process.env.NODE_ENV === 'undefined';
 
 // For usable links in production need to set root and hash, and send it to new Navigo as params.
-var root = isProd ? "https://oleg291291.github.io/robofight/" : null;
+var root = location.href;
 var useHash = true;
 var hash = '#';
 
-var router = new Navigo(root, useHash, hash);
+var router = (isProd) ? new Navigo(root, useHash, hash) : new Navigo();
 
 router
     .on(HomePage)

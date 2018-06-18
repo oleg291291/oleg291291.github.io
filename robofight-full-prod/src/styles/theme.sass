@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC')
+
+// color-scheme
+$white: #ffffff
+$black: #010101
+$cyan: #64d4d4
+$blue: #84aaad
+$yellow: #edd887
+
+$text-color: $black
+$background-color: $white
+
+$basic-font: 'Roboto', sans-serif
+$logo-font: 'Bowlby One SC', sans-serif
+
+@keyframes fadein
+    0%  
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes rot
+    0%  
+        transform: rotate(0deg)
+        opacity: 0
+    50%
+        transform: rotate(180deg)
+        opacity: 1
+    100%
+        transform: rotate(360deg)
+        opacity: 0
+
+#app
+    min-width: 1024px
+    min-height: 768px
+    background-color: $background-color
+    height: 100vh
+    color: $text-color
+    font-size: 16px
+    font-family: $basic-font
+
+
+.landing-page-container
+    background-image: linear-gradient(to top, #edd887, #c7dc9b, #addab3, #a5d4c5, #adcbcb)
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 100%
+
+header.landing-header
+    width: 100%
+    text-align: center
+    margin-top: auto
+h1.landing-header__text-logo
+    cursor: default
+    margin: 16px 0 0
+    font-family: $logo-font
+    font-size: 96px
+    letter-spacing: 8px
+    color: $yellow
+    text-transform: uppercase
+    text-shadow: -0 -2px 1px $black,0 -2px 1px $black,-0 2px 1px $black,0 2px 1px $black,-2px -0 1px $black,2px -0 1px $black,-2px 0 1px $black,2px 0 1px $black,-1px -2px 1px $black,1px -2px 1px $black,-1px 2px 1px $black,1px 2px 1px $black,-2px -1px 1px $black,2px -1px 1px $black,-2px 1px 1px $black,2px 1px 1px $black,-2px -2px 1px $black,2px -2px 1px $black,-2px 2px 1px $black,2px 2px 1px $black,-2px -2px 1px $black,2px -2px 1px $black,-2px 2px 1px $black, 2px 2px 1px $black
+.landing-header__description
+    letter-spacing: 8px
+    font-size: 38px
+    text-transform: uppercase
+    margin-bottom: 8px
+
+main.landing-main
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 16px
+.screenshots-container
+    display: flex
+    justify-content: center
+.screenshot
+    border: 4px solid $black
+    border-radius: 16px 8px
+    margin: 16px
+    display: flex
+    align-items: flex-end
+    background: white url('../images/screenshot-1.png') no-repeat center
+    background-size: cover
+    width: 320px
+    height: 240px
+    animation: 1s fadein
+    &:nth-child(2)
+        background-image: url('../images/screenshot-2.png')
+    &:nth-child(3)
+        background-image: url('../images/screenshot-3.png')
+    &__description
+        font-weight: bold
+        padding: 8px 16px
+        color: $black
+        background-color: $yellow
+        border-top-right-radius: 8px
+        border-bottom-left-radius: 4px
+        border-top: 2px solid $black
+        border-right: 2px solid $black
+a.start-button, a.restart-button, .game-over__ok-button, .task__submit
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    width: 640px
+    height: 64px
+    border-radius: 4px
+    font-size: 40px
+    text-transform: uppercase
+    letter-spacing: 8px
+    border: 2px solid black
+    font-family: $logo-font
+    background-color: $yellow
+    color: $black
+    text-decoration: none
+    &:hover
+        background-color: $cyan        
+        transform: scale(1.1, 1.1)
+    &:visited
+        color: $black
+
+.game-over__ok-button, .task__submit
+    width: 320px
+.game-over__input, .task__answer
+    height: 64px
+    width: 320px
+    border-radius: 4px
+    outline: none
+    font-size: 32px
+    text-align: center
+    margin: 8px 0 8px
+.game-over__text
+    font-size: 32px
+    
+footer.landing-footer
+    display: flex
+    height: 64px
+    width: 100%
+    margin-top: auto
+div.game-info
+    text-align: center
+    margin: auto
+    
+    text-decoration: none
+    & h2, h3
+        text-transform: uppercase
+        margin-bottom: 4px
+        & a
+            color: $black
+            text-decoration: none
+            border-bottom: 2px solid $black
+    & h4 a
+        color: $black
+        text-decoration: none
+    & a:hover
+        letter-spacing: 0.8px    
+
+////duel page
+.duel-page-container
+    display: flex
+    flex-direction: column
+    align-content: center
+    justify-content: center
+    background-image: linear-gradient(to top, #edd887, #c7dc9b, #addab3, #a5d4c5, #adcbcb)
+    height: 100%
+.enemy-name
+    text-align: center
+    font-size: 32px
+    margin-bottom: 32px
+.duel-main
+    display: flex
+    justify-content: center
+.player-energy, .enemy-energy
+    height: 390px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+.player-energy-bar, .enemy-energy-bar
+    border: 2px solid black
+    border-radius: 4px
+    width: 32px
+    height: 320px
+    background: $blue
+
+.enemy-energy-bar
+    margin-left: auto
+.enemy-energy-bar__counter
+    text-align: right
+.enemy-energy-bar__counter, .player-energy-bar__counter
+    font-family: $logo-font
+    font-size: 32px
+
+.enemy-and-spell-button-container
+    width: 640px
+    display: flex
+    flex-direction: column
+    align-items: center
+canvas.visual-effect-canvas
+    position: absolute
+    align-self: center
+    animation: 3s fadein linear
+
+.enemy-canvas
+    animation: 3s fadein linear
+
+.spell-choose-button, .win__next-button, .task__voice-button
+    outline: none
+    width: 260px
+    height: 64px
+    cursor: pointer
+    border-radius: 4px
+    font-size: 32px
+    border: 2px solid black
+    background-color: $yellow
+    &:hover
+        background-color: $cyan        
+        transform: scale(1.1, 1.1)
+
+button.win__next-button__unactive
+    opacity: 0
+    cursor: default
+        
+.task__voice-button
+    width: 320px
+    margin-top: 8px
+    display: none
+
+/////////////
+.task-component
+    position: absolute
+    margin-top: 128px
+.task-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border: 4px solid $black
+    border-radius: 8px
+    width: 640px
+    height: 280px
+    background-image: linear-gradient(to bottom, #c7dc9b, #addab3)
+    z-index: 10
+.spell-menu-container
+    overflow-y: scroll
+    display: flex
+    flex-direction: column
+    align-items: center
+    &::-webkit-scrollbar
+        width: 24px
+        background: $black
+        &-thumb
+            background: $yellow
+            border-left: 4px solid $black          
+            border-radius: 4px
+            
+.spell-menu
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+.spell-menu__text
+        margin: 8px auto
+.spell-menu__spell-button
+    width: 280px
+    height: 64px
+    margin: 4px
+    cursor: pointer
+    border-radius: 4px
+    font-size: 32px
+    border: 2px solid black
+    background-color: $yellow
+    &:hover
+        background-color: $cyan
+        transform: scale(1.1, 1.1)
+.task
+    display: flex
+    flex-direction: column
+    align-items: center
+.task__brief
+    font-size: 28px
+.task__description
+    font-size: 32px
+
+.win-container, .game-over-container, .score-container
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -10
+    background-image: linear-gradient(to top, #edd887, #c7dc9b, #addab3, #a5d4c5, #adcbcb)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    min-height: 768px
+    height: 100%
+    min-width: 1024px
+    width: 100%
+
+.win__header, .game-over__header, .score__header
+    font-family: $logo-font
+    letter-spacing: 8px
+    text-transform: uppercase
+    font-size: 64px
+    margin-bottom: 16px
+
+.score__header
+    margin: 0
+.score-list
+    list-style: none
+    text-align: center
+    padding: 0
+    margin: 0 0 8px 0
+    & li
+        margin: 8px
+        font-size: 32px
+.task__sortable-list
+    list-style: none
+    display: none
+    justify-content: center
+    padding: 0
+    margin: 16px
+.task__sortable-list-item
+    border-radius: 4px
+    margin: 0 4px
+    padding: 4px
+    background: $cyan
+    text-align: center
+    text-transform: uppercase
+    border: 2px solid $black
+    min-width: 48px
+    font-size: 32px
+    height: 48px

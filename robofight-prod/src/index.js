@@ -18,13 +18,12 @@ import { scoreCounter } from './scripts/score';
 
 
 var isProd = typeof process.env.NODE_ENV === 'undefined';
-
 // For usable links in production need to set root and hash, and send it to new Navigo as params.
-var root = location.href;
+var root = (isProd) ? location.href : null;
 var useHash = true;
 var hash = '#';
 
-var router = (isProd) ? new Navigo(root, useHash, hash) : new Navigo();
+var router = new Navigo(root, useHash, hash);
 
 router
     .on(HomePage)

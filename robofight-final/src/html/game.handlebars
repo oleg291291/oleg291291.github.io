@@ -1,0 +1,53 @@
+<div class="duel-page-container">
+    <canvas id="visualCanvas" class="visual-effect-canvas" width="640" height="320"></canvas>
+    <h3 class="enemy-name">You attacked by <span>Rusty Android Rasta</span>!</h3>
+    <main class="duel-main">
+        <div class="player-energy">
+            <div class="player-energy-bar"></div>
+            <div class="player-energy-bar__counter">100</div>
+            <div class="player-energy-bar__text">Your energy</div>
+        </div>
+        <div class="enemy-and-spell-button-container">
+            <div class="enemy">
+
+                <canvas id="enemyCanvas" width="640" height="320" class="enemy-canvas"></canvas>
+
+            </div>
+            <button class="spell-choose-button">Attack enemy!</button>
+        </div>
+        <div class="enemy-energy">
+            <div class="enemy-energy-bar"></div>
+            <div class="enemy-energy-bar__counter">100</div>
+            <div class="enemy-energy-bar__text">Enemy energy</div>
+        </div>
+        <div class="task-component"></div>
+        <div class="win-container">
+            <h3 class="win__header">You win!</h3>
+            <button class="win__next-button">Next!</button>
+        </div>
+        <div class="game-over-container">
+            <h3 class="game-over__header">Game over!</h3>
+
+            <p class="game-over__text">Enter your name:</p>
+            <input type="text" class="game-over__input">
+            <button class="game-over__ok-button">Ok</button>
+        </div>
+        <div class="score-container">
+            <h3 class="score__header">Top-10</h3>
+            <ul class="score-list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <a href="/" data-path class="restart-button">Restart!</a>
+        </div>
+    </main>
+</div>

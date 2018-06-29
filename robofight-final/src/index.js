@@ -5,11 +5,19 @@ import $ from 'jquery';
 
 import Navigo from 'navigo';
 
-import HomePage from './home.js';
-import GamePage from './game.js';
+import { compile } from 'handlebars'
+import templateHome from './html/home.handlebars'
+import templateGame from './html/game.handlebars'
 
-import TaskMenuComponent from './components/taskMenuComponent.js';
-import TaskComponent from './components/taskComponent.js';
+import templateTaskMenuComponent from './html/taskMenuComponent.handlebars'
+import templateTaskComponent from './html/taskComponent.handlebars'
+
+
+
+
+
+// import TaskMenuComponent from './components/taskMenuComponent.js';
+// import TaskComponent from './components/taskComponent.js';
 
 import nameGenerator from './scripts/nameGenerator';
 import runTask from './scripts/runTask';
@@ -20,6 +28,7 @@ import headPart from './sprites/heads.png'
 import bodyPart from './sprites/bodies.png'
 import footsPart from './sprites/foots.png'
 import armsPart from './sprites/arms.png'
+
 
 var enemyHead = new Image();
 enemyHead.src = headPart;
@@ -34,7 +43,7 @@ enemyLeftArm.src = armsPart;
 
 
 var isProd = typeof process.env.NODE_ENV === 'undefined';
-// For usable links in production need to set root and hash, and send it to new Navigo as params.
+
 var root = (isProd) ? location.href : null;
 var useHash = true;
 var hash = '#';
@@ -42,19 +51,26 @@ var hash = '#';
 var router = new Navigo(root, useHash, hash);
 
 router
-    .on(HomePage)
+    .on($('#app').html(compile(templateHome)({})))
 
     .on('game', () => {
 
-        GamePage();
+        $('#app').html(compile(templateGame)({}))
+
         nameGenerator();
 
         canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRightArm);
+
         scoreCounter();
 
         $('button.spell-choose-button').on('click', () => {
-            TaskMenuComponent();
-            $('button.spell-menu__spell-button').on('click', TaskComponent);
+
+            $('.task-component').html(compile(templateTaskMenuComponent)());
+
+            $('button.spell-menu__spell-button').on('click', () => {
+                $('.task-component').html(compile(templateTaskComponent)());
+            });
+
             $('button.spell-menu__spell-button').on('click', runTask);
         });
 

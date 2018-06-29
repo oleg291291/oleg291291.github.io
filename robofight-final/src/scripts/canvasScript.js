@@ -6,9 +6,9 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
   var canvas = document.getElementById('enemyCanvas');
   var context = canvas.getContext('2d');
 
-  var randArr = [];
+  var randomBodyPartsArray = [];
   for (var i = 0; i < 4; i++) {
-    randArr.push(getRandomInt(0, 2));
+    randomBodyPartsArray.push(getRandomInt(0, 2));
   }
 
   (function () {
@@ -48,9 +48,9 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
         enemyCounter.innerText = 100;
         nameGenerator();
 
-        randArr.length = 0;
+        randomBodyPartsArray.length = 0;
         for (var i = 0; i < 4; i++) {
-          randArr.push(getRandomInt(0, 2));
+          randomBodyPartsArray.push(getRandomInt(0, 2));
         }
 
         document.querySelector(".win__next-button").classList.remove('win__next-button__unactive');
@@ -71,7 +71,7 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
 
     //left arm
     var sourceX = 200;
-    var sourceY = (randArr[3]) ? 0 : 380;
+    var sourceY = (randomBodyPartsArray[3]) ? 0 : 380;
     var sourceWidth = 200;
     var sourceHeight = 300;
     var destWidth = sourceWidth / 2;
@@ -82,7 +82,7 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
 
     //right arm
     var sourceX = 0;
-    var sourceY = (randArr[3]) ? 0 : 380;
+    var sourceY = (randomBodyPartsArray[3]) ? 0 : 380;
     var sourceWidth = 200;
     var sourceHeight = 300;
     var destWidth = sourceWidth / 2;
@@ -93,7 +93,7 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
 
     //foots
     var sourceX = 0;
-    var sourceY = (randArr[2]) ? 0 : 380;
+    var sourceY = (randomBodyPartsArray[2]) ? 0 : 380;
     var sourceWidth = 400;
     var sourceHeight = 300;
     var destWidth = sourceWidth / 2;
@@ -104,7 +104,7 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
 
     //body
     var sourceX = 0;
-    var sourceY = (randArr[1]) ? 0 : 395;
+    var sourceY = (randomBodyPartsArray[1]) ? 0 : 395;
     var sourceWidth = 400;
     var sourceHeight = 300;
     var destWidth = sourceWidth / 2;
@@ -115,7 +115,7 @@ function canvasScript(enemyHead, enemyBody, enemyFoots, enemyLeftArm, enemyRight
 
     //head
     var sourceX = 0;
-    var sourceY = (randArr[0]) ? 0 : 380;
+    var sourceY = (randomBodyPartsArray[0]) ? 0 : 380;
     var sourceWidth = 400;
     var sourceHeight = 300;
     var destWidth = sourceWidth / 2;

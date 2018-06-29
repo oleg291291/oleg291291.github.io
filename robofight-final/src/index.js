@@ -12,13 +12,6 @@ import templateGame from './html/game.handlebars'
 import templateTaskMenuComponent from './html/taskMenuComponent.handlebars'
 import templateTaskComponent from './html/taskComponent.handlebars'
 
-
-
-
-
-// import TaskMenuComponent from './components/taskMenuComponent.js';
-// import TaskComponent from './components/taskComponent.js';
-
 import nameGenerator from './scripts/nameGenerator';
 import runTask from './scripts/runTask';
 import { canvasScript } from './scripts/canvasScript';

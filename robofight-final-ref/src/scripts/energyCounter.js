@@ -1,4 +1,4 @@
-import { finalScore } from './score'
+import gameOver from './gameOver';
 
 export default function energyCounter(energyDamage, target = 'enemy') {
 
@@ -15,30 +15,10 @@ export default function energyCounter(energyDamage, target = 'enemy') {
 
         var playerCounter = document.querySelector(".player-energy-bar__counter");
         if (playerCounter.innerText < 1 && isPlayerGotEnergy === true) {
+            isPlayerGotEnergy = false;
 
-            isPlayerGotEnergy = false
+            gameOver();
 
-            var gameOverContainer = document.querySelector(".game-over-container");
-            gameOverContainer.style.zIndex = '20';
-            gameOverContainer.style.animation = '2s fadein linear';
-
-            var gameOverInput = document.querySelector(".game-over__input")
-            var gameOverButton = document.querySelector(".game-over__ok-button")
-            gameOverInput.focus();
-
-            function gameOverInputHandler(event) {
-                const enterButtonKeyCode = 13;
-                if (event.keyCode === enterButtonKeyCode) {
-                    gameOverInput.blur();
-                    finalScore();
-                }
-            }
-            function gameOverButtonHandler() {
-                gameOverButton.blur();
-                finalScore();
-            }
-            gameOverInput.addEventListener('keydown', gameOverInputHandler)
-            gameOverButton.addEventListener('click', gameOverButtonHandler)
         }
         if (animationCounter > energyDamage - 1) { clearInterval(energyReducerInterval); }
     }, 300);

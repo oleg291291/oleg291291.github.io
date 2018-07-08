@@ -10,7 +10,6 @@ const { ProvidePlugin } = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
-
 const config = {
     // Include source maps in development files
     devtool: isProd ? false : '#cheap-module-source-map',

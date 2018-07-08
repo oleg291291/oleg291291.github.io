@@ -98,11 +98,14 @@ export default function visualBurner() {
     };
 
     var loop = function () {
-        if (globalTick > 120 && globalTick < 200) {
-            visualCanvas.style.opacity = (200 - globalTick) / 100;
+
+        var animationDuration = 200;
+
+        if (globalTick > (animationDuration/1.8) && globalTick < animationDuration) {
+            visualCanvas.style.opacity = (animationDuration - globalTick) / (animationDuration/2);
         }
 
-        if (globalTick > 200) {
+        if (globalTick > animationDuration) {
             visualCanvas.style.display = 'none';
             visualCanvas.style.opacity = 1;
             clear();

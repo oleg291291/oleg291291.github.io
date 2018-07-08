@@ -3,15 +3,16 @@ export default function visualBlizzard() {
     var visualCanvas = document.getElementById('visualCanvas');
     visualCanvas.style.display = 'block';
 
-    var counter = 0;
-    var DAMPING = 0.999;
+    var animationCounter = 0;
+    var animationDuration = 400;
+    var damping = 0.999;
     function Particle(x, y) {
         this.x = this.oldX = x;
         this.y = this.oldY = y;
     }
     Particle.prototype.integrate = function () {
-        var velocityX = (this.x - this.oldX) * DAMPING;
-        var velocityY = (this.y - this.oldY) * DAMPING;
+        var velocityX = (this.x - this.oldX) * damping;
+        var velocityY = (this.y - this.oldY) * damping;
         this.oldX = this.x;
         this.oldY = this.y;
         this.x += velocityX;
@@ -25,7 +26,8 @@ export default function visualBlizzard() {
         this.y += dy / distance;
     };
     Particle.prototype.draw = function () {
-        visualContext.strokeStyle = (Math.floor(Math.random() * (2 - 0))) ? '#64d4d4' : '#ffffff';
+        var animationColorsArray= ['#64d4d4', '#ffffff']
+        visualContext.strokeStyle = (Math.floor(Math.random() * (2 - 0))) ? animationColorsArray[0] : animationColorsArray[1];
         visualContext.lineWidth = 5;
         visualContext.beginPath();
         visualContext.moveTo(this.oldX, this.oldY);
@@ -34,17 +36,19 @@ export default function visualBlizzard() {
     };
     var visualContext = visualCanvas.getContext('2d');
     var particles = [];
+    var particlesAmount = 200;
     var width = visualCanvas.width = window.innerWidth;
     var height = visualCanvas.height = window.innerHeight;
     var targetPoint = { x: width * 0.5, y: height * 0.5 - 5 };
-    for (var i = 0; i < 200; i++) {
+
+    for (var i = 0; i < particlesAmount; i++) {
         particles[i] = new Particle(Math.random() * width, Math.random() * height);
     }
 
     requestAnimationFrame(frame);
     function frame() {
-        counter++;
-        if (counter < 400) {
+        animationCounter++;
+        if (animationCounter < animationDuration) {
             requestAnimationFrame(frame);
             visualContext.clearRect(0, 0, width, height);
             for (var i = 0; i < particles.length; i++) {

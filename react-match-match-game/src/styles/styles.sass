@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker')
+    
+.page-container
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 1440px
+    height: 720px
+    background-color: #66A3D2
+    font-size: 24px
+    font-family: 'Permanent Marker', cursive
+.welcome-container, .profile-container
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 1440px
+    z-index: 100
+    height: 720px
+    text-align: center
+    background-color: #66A3D2
+.welcome-container h1
+    margin: 32px
+    font-size: 48px
+    font-weight: normal
+    color: #FFCF40
+.welcome
+    width: 768px
+    height: 420px
+    border: 1px solid #7373D9
+    border-radius: 8px
+    background: #996AD6
+p.welcome__rules
+    padding: 0 32px
+    margin-bottom: 34px
+    height: 180px
+
+.welcome__button,
+input[type=submit],
+input[type=button],
+.start-game-button,
+input.score__restart
+    font-size: 24px
+    font-family: 'Permanent Marker', cursive
+    width: 200px
+    height: 48px
+    background-color: #FFDC73
+    border: 1px solid #7373D9
+    border-radius: 8px
+
+// Setup profile
+
+.profile-form 
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 768px
+    height: 420px
+    border: 1px solid #7373D9
+    border-radius: 8px
+    background: #996AD6
+
+
+.profile-text-inputs label
+    width: 256px
+    display: flex
+    flex-direction: column
+
+input[type=text],input[type=email]
+    height: 48px
+    border-radius: 8px
+    margin: 12px
+    text-align: center
+
+.profile-form-fields
+    display: flex
+    flex-direction: row
+
+.profile-text-inputs
+    display: flex
+    flex-direction: column
+    margin-right: 32px
+
+.profile-skirt-checkboxes, .profile-difficulty-checkboxes
+    display: flex
+    flex-direction: row
+    margin: 12px 0px
+
+.profile-checkboxes
+    display: flex
+    flex-direction: column
+
+.profile-checkboxes input
+    display: none
+
+.profile-checkboxes input:checked + label
+    box-shadow: 0 0 10px 10px rgba(0,200,200,0.5)
+
+.profile-checkboxes label
+    border-radius: 8px
+
+.profile-checkboxes > div > label:first-of-type
+    margin-right: 32px
+
+.profile-skirt-checkboxes label
+    width: 148px
+    height: 148px
+    background: #7373D9 url(../images/skirt1.png) center no-repeat
+    background-size: 70%
+
+.profile-skirt-checkboxes label[for=profile-skirt2]
+    background-image: url(../images/skirt2.png)
+
+.profile-difficulty-checkboxes label
+    background: #7373D9
+    width: 148px
+    height: 48px
+    padding-top: 4px
+
+// GAME
+
+.cards-field
+    flex-wrap: wrap
+    display: flex
+    justify-content: center
+
+.cards-field_easy
+    width: 70%
+
+.card
+    margin: 16px
+    width: 180px
+    height: 180px
+    -webkit-transform-style: preserve-3d
+    -webkit-transition: -webkit-transform 1.5s
+
+.rotated
+    -webkit-transform: rotateY(180deg)
+
+.side
+    position: absolute
+    -webkit-backface-visibility: hidden
+    -webkit-box-shadow: 0 2px 5px #666
+    border-radius: 8px
+
+.front
+    height: 180px
+    width: 180px
+    background: #7373D9 url(../images/skirt1.png) center no-repeat
+    background-size: 70%
+
+.skirt2
+    background-image: url(../images/skirt2.png)
+
+.back
+    height: 180px
+    width: 180px
+    -webkit-transform: rotateY(180deg)
+    background-color: azure
+
+.back p
+    display: none
+
+.fade div.side
+    transition: all 2s ease
+    opacity: 0
+
+div.back.side.card-value-red-apple
+    background: white url('../images/fruits.png') no-repeat top left
+
+div.back.side.card-value-lemon
+    background: white url('../images/fruits.png') no-repeat top center
+
+div.back.side.card-value-plum
+    background: white url('../images/fruits.png') no-repeat top right
+
+div.back.side.card-value-banana
+    background: white url('../images/fruits.png') no-repeat center left
+
+div.back.side.card-value-strawberry
+    background: white url('../images/fruits.png') no-repeat center center
+
+div.back.side.card-value-pear
+    background: white url('../images/fruits.png') no-repeat center right
+
+div.back.side.card-value-orange
+    background: white url('../images/fruits.png') no-repeat bottom left
+
+div.back.side.card-value-green-apple
+    background: white url('../images/fruits.png') no-repeat bottom center
+
+div.back.side.card-value-cherry
+    background: white url('../images/fruits.png') no-repeat bottom right
+
+.timer-container
+    width: 100%
+.timer
+    margin: 0 auto
+    width: 260px
+    display: flex
+    justify-content: space-between
+    &__header, &__description
+        width: 100px
+    &__header
+        text-align: end
+    &__value
+        text-align: center
+        width: 60px
+.score
+    display: flex
+    flex-direction: column
+    align-items: center
+.score__high-score
+    text-align: center
+    list-style: none

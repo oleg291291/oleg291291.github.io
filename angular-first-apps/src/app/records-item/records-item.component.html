@@ -1,0 +1,7 @@
+<div class="records-item" [cardHighlight]='cardHighLightColor'>
+    <h3 *ngIf='record.artist'>{{record.artist}}</h3>
+    <h3 *ngIf='record.title'>{{record.title}}</h3>
+    <button class="records-item__status" (click)="onToggle()" [class.records-item__status_favorite]="record.favorite">{{record.favorite ? 'fav' : '---'}}</button>
+    <button (click)="onDelete()">remove</button>
+
+</div>

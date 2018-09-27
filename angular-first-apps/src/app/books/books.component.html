@@ -1,0 +1,17 @@
+<h3>Add form:</h3>
+<form (ngSubmit)='addBook($event); dynamicBookForm.reset()' #dynamicBookForm="ngForm">
+    <label>author<input name='author' [(ngModel)]='newBook.author' required></label>
+    <label>title<input name='title' [(ngModel)]='newBook.title' required></label>
+    <button type='submit' [disabled]="dynamicBookForm.form.invalid">add</button>
+</form>
+
+<h3>Books list:</h3>
+<ul>
+    <li *ngFor="let book of books | async" class="books-item" [cardHighlight]='cardHighLightColor' >
+        <h3 *ngIf='book.author'>{{book.author}}</h3>
+        <h3 *ngIf='book.title'>{{book.title}}</h3>
+        <button class="books-item__status" (click)="toggle(book, $event)" [class.books-item__status_favorite]="book.favorite">{{book.favorite ? 'fav' : '---'}}</button>
+        <button (click)="delete(book, $event)">remove</button>
+
+    </li>
+</ul>

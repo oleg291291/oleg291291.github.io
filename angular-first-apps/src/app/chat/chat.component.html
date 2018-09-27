@@ -1,0 +1,15 @@
+<ng-container>
+    
+    <ul #chatList>
+        <li *ngFor="let chatItem of chatItems | async">
+            {{chatItem.name + ' : ' + chatItem.msg}}
+        </li>
+    </ul>
+
+    <form (ngSubmit)='sendMsg($event)' #chatMsgForm="ngForm">
+        <label><span>your name: </span><input [(ngModel)]='userName' name='userName' required></label>
+        <label><span>message: </span><input [(ngModel)]='userMsg' name='userMsg' required></label>
+        <button type='submit' [disabled]='chatMsgForm.form.invalid'>sendMsg</button>
+    </form>
+
+</ng-container>

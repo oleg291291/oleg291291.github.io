@@ -1,0 +1,9 @@
+<h3>Timer value: {{ (timer$ | async)?.timer }}</h3>
+<button (click)='timerInc($event)'>timerInc</button>
+<button (click)='timerStart($event)'>timerStart</button>
+<button (click)='timerStop($event)'>timerStop</button>
+<form #timerForm="ngForm" (ngSubmit)='timerSet($event)'>
+    <label>Set timer to:
+  <input type='number' required name='timerInput' [(ngModel)]='timerInput'></label>
+    <button [disabled]="timerForm.form.invalid">Set!</button>
+</form>

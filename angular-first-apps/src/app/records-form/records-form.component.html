@@ -1,0 +1,4 @@
+<form (ngSubmit)="onSubmit(); recordsForm.reset()" #recordsForm="ngForm">
+    <input type="text" name="title" [(ngModel)]="title" required>
+    <button type="submit" [disabled]="recordsForm.form.invalid">add record</button>
+</form>

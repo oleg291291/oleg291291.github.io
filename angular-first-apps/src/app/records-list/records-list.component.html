@@ -1,0 +1,5 @@
+<div class="records-list" *ngIf="records.length">
+    <records-form></records-form>
+    <records-search (changeFilter)="changeFilter($event)"></records-search>
+    <records-item *ngFor="let record of records | myfilter:filterString" (delete)="delete($event)" (toggle)="toggle($event)" [record]="record"></records-item>
+</div>

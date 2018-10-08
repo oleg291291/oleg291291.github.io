@@ -1,0 +1,4 @@
+<app-header [selectedUser]='selectedUser'></app-header>
+<select (change)=onSelectChange($event)>
+  <option *ngFor="let user of users">{{user.userName}}</option>
+</select>

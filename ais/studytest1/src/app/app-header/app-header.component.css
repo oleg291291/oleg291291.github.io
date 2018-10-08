@@ -1,0 +1,20 @@
+header{
+    background: #B2DEF0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 100px;
+}
+h3{
+    text-transform: uppercase;
+    margin: 0 30px;
+    font-size: 32px;
+}
+div{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}

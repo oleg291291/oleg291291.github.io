@@ -1,4 +1,7 @@
 <header>
-    <h3>{{selectedUser.userName}}</h3>
-    <div [ngStyle]="{'background-image': 'url(' + selectedUser.userImage + ')'}"></div>
+    <div class="user-info">
+        <h3>{{selectedUser.userName}}</h3>
+        <div class="user-image" [ngStyle]="{'background-image': 'url(' + selectedUser.userImage + ')'}"></div>
+    </div>
+    <p>selected table data: {{selectedPhone?.model}}</p>
 </header>

@@ -1,0 +1,18 @@
+table{
+    margin: 16px auto;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    border-collapse: collapse;
+    cursor: default;
+}
+caption{
+    margin: 8px 0;
+}
+td{
+    padding: 8px 16px;
+}
+tbody > tr:hover{
+    background: #B2DEF0;
+    cursor: pointer;
+}

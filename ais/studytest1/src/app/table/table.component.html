@@ -1,0 +1,17 @@
+<table>
+  <caption>Choose smartphone for user:</caption>
+  <thead>
+    <tr>
+      <th>Модель</th>
+      <th>Компания</th>
+      <th>Цена</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let phone of phones" (click)='onSelect(phone, $event)'>
+      <td>{{phone.model}}</td>
+      <td>{{phone.firm}}</td>
+      <td>{{phone.cost}}</td>
+    </tr>
+    <tbody>
+</table>

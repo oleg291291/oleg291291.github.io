@@ -1,4 +1,4 @@
-select{
+select {
     display: flex;
     margin: 30px auto;
     height: 50px;
@@ -6,9 +6,15 @@ select{
     font-size: 24px;
 }
 
-div{
+div {
     width: 30px;
     height: 30px;
     background-size: contain
 }
 
+button.modal-button {
+    display: flex;
+    margin: 16px auto;
+    font-size: 20px;
+    // border-radius: 4px;
+}

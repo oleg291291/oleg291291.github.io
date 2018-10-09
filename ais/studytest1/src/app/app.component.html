@@ -1,4 +1,8 @@
-<app-header [selectedUser]='selectedUser'></app-header>
+<app-header [selectedUser]='selectedUser' [selectedPhone]='selectedPhone'></app-header>
 <select (change)=onSelectChange($event)>
   <option *ngFor="let user of users">{{user.userName}}</option>
 </select>
+<app-info-bar></app-info-bar>
+<button class="modal-button" (click)="openModal()">Open Modal</button>
+<app-modal *ngIf='isModalOpened' (closeModal)='closeModal()'></app-modal>
+<app-table (phoneSelect)='phoneSelect($event)'></app-table>

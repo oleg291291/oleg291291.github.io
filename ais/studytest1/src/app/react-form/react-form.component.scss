@@ -1,0 +1,41 @@
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    margin: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+input {
+    border-radius: 4px;
+}
+
+input.ng-valid.ng-dirty {
+    background: lightblue;
+}
+
+p {
+    position: absolute;
+    margin-left: 320px;
+}
+
+button {
+    width: 100px;
+    height: 28px;
+    margin: 0 auto;
+    border-radius: 4px;
+}

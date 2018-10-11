@@ -9,26 +9,32 @@ import { usersConst } from './shared/app.const';
 })
 export class AppComponent {
   users = usersConst;
+
   selectedUser = usersConst[0];
   isModalOpened = false;
-  selectedPhone;
+  // selectedPhone;
+
   constructor() { }
-  onSelectChange(event): void {
-    usersConst.find(item => {
-      if (item.userName === event.target.value) {
-        this.selectedUser = item;
-        return true;
-      }
-    });
-  }
-  openModal(id: string) {
+
+  // onSelectChange(event): void {
+  //   usersConst.find(item => {
+  //     if (item.userName === event.target.value) {
+  //       this.selectedUser = item;
+  //       return true;
+  //     }
+  //   });
+  // }
+
+  openModal(id: string): void {
     this.isModalOpened = true;
   }
-  closeModal() {
+
+  closeModal(): void {
     this.isModalOpened = false;
   }
-  phoneSelect(phone){
-    console.log('yoooo');
-    this.selectedPhone = phone;
+
+  selectUser(user): void {
+    this.selectedUser = user;
   }
+
 }

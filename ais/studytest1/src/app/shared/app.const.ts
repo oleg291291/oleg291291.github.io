@@ -2,23 +2,33 @@ import { User } from './app.models';
 
 export const usersConst: User[] = [
     {
-        userName: 'user1',
-        userImage: 'https://randomuser.me/api/portraits/lego/4.jpg'
+        userName: 'Max',
+        userImage: 'https://randomuser.me/api/portraits/lego/4.jpg',
+        userAge: '18',
+        userOccupation: 'Builder'
     },
     {
-        userName: 'user2',
-        userImage: 'https://randomuser.me/api/portraits/lego/5.jpg'
+        userName: 'Steve',
+        userImage: 'https://randomuser.me/api/portraits/lego/5.jpg',
+        userAge: '21',
+        userOccupation: 'Actor'
     },
     {
-        userName: 'user3',
-        userImage: 'https://randomuser.me/api/portraits/lego/6.jpg'
+        userName: 'Fred',
+        userImage: 'https://randomuser.me/api/portraits/lego/6.jpg',
+        userAge: '25',
+        userOccupation: 'Musician'
     },
     {
-        userName: 'user4',
-        userImage: 'https://randomuser.me/api/portraits/lego/7.jpg'
+        userName: 'Greg',
+        userImage: 'https://randomuser.me/api/portraits/lego/7.jpg',
+        userAge: '28',
+        userOccupation: 'Engineer'
     },
     {
-        userName: 'user5',
-        userImage: 'https://randomuser.me/api/portraits/lego/8.jpg'
+        userName: 'Bob',
+        userImage: 'https://randomuser.me/api/portraits/lego/8.jpg',
+        userAge: '31',
+        userOccupation: 'Cook'
     },
-]
+];

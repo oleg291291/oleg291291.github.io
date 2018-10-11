@@ -1,17 +1,24 @@
-<table>
-  <caption>Choose smartphone for user:</caption>
-  <thead>
-    <tr>
-      <th>Модель</th>
-      <th>Компания</th>
-      <th>Цена</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let phone of phones" (click)='onSelect(phone, $event)'>
-      <td>{{phone.model}}</td>
-      <td>{{phone.firm}}</td>
-      <td>{{phone.cost}}</td>
-    </tr>
+<div>
+  <table>
+    <caption>Choose user:</caption>
+    <thead>
+      <tr>
+        <th>userName</th>
+        <th>userAge</th>
+        <th>userOccupation</th>
+      </tr>
+    </thead>
     <tbody>
-</table>
+      <tr *ngFor="let user of users | occupationFilter : filterString" (click)='onSelect(user, $event)' appHighlight='lightblue'>
+        <td>{{user.userName | uppercase}}</td>
+        <td>{{user.userAge}}</td>
+        <td>{{user.userOccupation}}</td>
+      </tr>
+    <tbody>
+  </table>
+  <label>
+    userName search:
+    <input type="text" (keyup)='filterCheck($event)'>
+  </label>
+</div>
+<!-- <p>{{30 | moreThan25}}</p> -->

@@ -1,0 +1,30 @@
+<div>
+    <h3>New user form:</h3>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <label>
+            <span>userName:</span>
+            <input type="text" formControlName="userName">
+            <p *ngIf="!profileForm.controls.userName.valid && profileForm.controls['userName'].dirty">{{profileForm.controls['userName'].errors.errorMessage.value}}</p>
+        </label>
+
+        <label>
+            <span>userAge:</span>
+            <input type="number" formControlName="userAge">
+            <!-- <p *ngIf="!profileForm.controls.userAge.valid && profileForm.controls['userAge'].dirty">{{profileForm.controls['userAge'].errors.errorMessage.value}}</p> -->
+        </label>
+
+        <label>
+            <span>userOccupation:</span>
+            <input type="text" formControlName="userOccupation">
+            <p *ngIf="!profileForm.controls.userOccupation.valid && profileForm.controls['userOccupation'].dirty">{{profileForm.controls['userOccupation'].errors.errorMessage.value}}</p>
+        </label>
+
+        <button type="submit" [disabled]="!profileForm.valid" >Add user</button>
+
+    </form>
+    <!-- <p>userName: {{profileForm.value.userName}}</p>
+    <p>userAge: {{profileForm.value.userAge}}</p>
+    <p>userOccupation: {{profileForm.value.userOccupation}}</p> -->
+    
+</div>
